@@ -47,7 +47,7 @@ public class IntroToFileIO {
 
 		//Write to a file
 		try {
-			FileWriter fw = new FileWriter("src/intro_to_file_io/test2.txt");
+			FileWriter fw = new FileWriter("src/intro_to_file_io/test2.txt", true);
 			
 			/*
 			NOTE: To append to a file that already exists, add true as a second parameter when calling the
