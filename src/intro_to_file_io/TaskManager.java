@@ -102,10 +102,10 @@ public class TaskManager implements ActionListener {
 		}
 		if (e.getSource() == b4) {
 			// JOptionPane.showMessageDialog(null, "Please choose the save file");
-for (int j = 0; j < tasks.size(); j++) {
+
 	
-	tasks.remove(0);
-}
+	tasks.clear(); 
+
 
 			try {
 				BufferedReader br = new BufferedReader(new FileReader("src/intro_to_file_io/ToDoList.txt"));
