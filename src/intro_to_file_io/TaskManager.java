@@ -22,7 +22,7 @@ public class TaskManager implements ActionListener {
 	JButton b4 = new JButton("load");
 	JPanel panel = new JPanel();
 	JFrame frame = new JFrame();
-	ArrayList<String> tasks = new ArrayList();
+	static ArrayList<String> tasks = new ArrayList();
 
 	TaskManager() {
 		b1.addActionListener(this);
@@ -41,7 +41,24 @@ public class TaskManager implements ActionListener {
 
 	public static void main(String[] args) {
 		TaskManager toDoList = new TaskManager();
+		
+		try {
+			BufferedReader br = new BufferedReader(new FileReader("src/intro_to_file_io/ToDoList.txt"));
 
+			String line = br.readLine();
+			while (line != null) {
+				tasks.add(line);
+				line = br.readLine();
+			}
+
+			br.close();
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 
 	@Override
@@ -132,3 +149,4 @@ public class TaskManager implements ActionListener {
 		}
 	}
 }
+//Copyright © 2018 by Adwit Aggarwal 
